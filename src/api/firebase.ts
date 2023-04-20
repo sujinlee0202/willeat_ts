@@ -21,7 +21,6 @@ const addUser = async (user: GoogleUser) => {
     id: user.uid,
     name: user.displayName,
     email: user.email,
-    admin: false,
   })
 }
 

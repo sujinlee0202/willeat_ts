@@ -12,6 +12,7 @@ const Login = () => {
 
   const onClickLogout = () => {
     logout().then(() => setUser && setUser(null))
+    setOpenMenu(false)
   }
 
   const onClickOpenMenuModal = () => {
@@ -26,7 +27,7 @@ const Login = () => {
           && user.photoURL 
           && <img src={user.photoURL} alt='google user' className='w-8 h-8 rounded-full' onClick={onClickOpenMenuModal}/>}
       </div>
-      {openMenu && user &&  (
+      {user && openMenu &&  (
         <div className='absolute top-16 right-4 bg-white w-36 p-2 rounded-xl border text-sm flex flex-col gap-1'>
           {user && user.isAdmin && <button className='w-full pb-1 border-b hover:text-orange-600 hover:font-bold'>맛집 추가하기</button>}
           {user && <button onClick={onClickLogout} className='w-full hover:text-orange-600 hover:font-bold'>Logout</button>}

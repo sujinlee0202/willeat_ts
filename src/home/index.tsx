@@ -1,19 +1,22 @@
 import { useEffect } from 'react'
 import { initMap } from '../api/naver-map'
+import Login from '../components/Login'
 
 const Home = () => {
   useEffect(() => {
     // 첫 시작 시 현재 위치를 기준으로 naver map 로드
-    const success = (pos: any) => {
+    const success = (pos: GeolocationPosition) => {
       let crd = pos.coords
       initMap(crd.latitude, crd.longitude)
     }
-
     navigator.geolocation.getCurrentPosition(success)
   }, [])
 
   return (
-    <div id='map' className='w-full h-[100vh]'></div>
+    <>
+      <div id='map' className='w-full h-[100vh]'></div>
+      <Login />
+    </>
   )
 }
 

@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import Home from './home'
+import Home from './pages/home'
 import { RouterProvider } from 'react-router-dom'
 import { routers } from './router'
 import LoginProvider from './context/loginContext'

@@ -16,5 +16,5 @@ body {
 }
 
 #root {
-  @apply m-0 w-full h-[100vh]
+  @apply m-0 w-full h-[100vh] flex items-center justify-center
 }

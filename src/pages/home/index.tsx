@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
-import { initMap } from '../api/naver-map'
-import Login from '../components/Login'
+import { initMap } from '../../api/naver-map'
+import Login from '../../components/Login'
+import SideBar from '../../components/SideBar'
 
 const Home = () => {
   useEffect(() => {
@@ -14,6 +15,7 @@ const Home = () => {
 
   return (
     <>
+      <SideBar />
       <div id='map' className='w-full h-[100vh]'></div>
       <Login />
     </>

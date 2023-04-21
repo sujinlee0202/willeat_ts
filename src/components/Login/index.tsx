@@ -1,6 +1,7 @@
 import { useContext, useState } from 'react'
 import { login, logout } from '../../api/firebase'
 import { loginContext } from '../../context/loginContext'
+import { Link } from 'react-router-dom'
 
 const Login = () => {
   const {user, setUser} = useContext(loginContext)
@@ -29,7 +30,7 @@ const Login = () => {
       </div>
       {user && openMenu &&  (
         <div className='absolute top-16 right-4 bg-white w-36 p-2 rounded-xl border text-sm flex flex-col gap-1'>
-          {user && user.isAdmin && <button className='w-full pb-1 border-b hover:text-orange-600 hover:font-bold'>맛집 추가하기</button>}
+          {user && user.isAdmin && <Link to='/newplace' className='w-full pb-1 border-b hover:text-orange-600 hover:font-bold text-center'>맛집 추가하기</Link>}
           {user && <button onClick={onClickLogout} className='w-full hover:text-orange-600 hover:font-bold'>Logout</button>}
         </div>
       )}

@@ -2,6 +2,8 @@ import { initializeApp } from "firebase/app";
 import { getAuth, signInWithPopup, GoogleAuthProvider, signOut, onAuthStateChanged } from "firebase/auth";
 import { getDatabase, ref, set, get } from "firebase/database";
 import { GoogleUser } from "../types/User";
+import { Place } from "../types/Place";
+import { v4 as uuidv4 } from 'uuid';
 
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_FIREBASE_APP_KEY,
@@ -56,5 +58,19 @@ const adminUser = async (user: GoogleUser) => {
       return {...user, isAdmin} 
     }
     return user
+  })
+}
+
+// db에 place 추가
+export const addNewPlace = (place: Place, url: string[]) => {
+  const id = uuidv4()
+  console.log('url', url)
+  return set(ref(database, `place/${id}`), {
+    ...place,
+    id: id,
+    imageUrl: url,
+    title: place.title,
+    category: place.category,
+    description: place.description,
   })
 }

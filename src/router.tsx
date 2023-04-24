@@ -1,6 +1,7 @@
 import { RouteObject, createBrowserRouter } from "react-router-dom";
 import Home from "./pages/home"
 import AddNewPlace from "./pages/addnewplace";
+import LoginLayout from "./layout/LoginLayout";
 
 const routeData: RouteObject[] = [
   {
@@ -9,7 +10,11 @@ const routeData: RouteObject[] = [
   },
   {
     path: '/newplace',
-    element: <AddNewPlace />
+    element: (
+      <LoginLayout requireAdmin={true}>
+        <AddNewPlace />
+      </LoginLayout>
+    )
   }
 ]
 

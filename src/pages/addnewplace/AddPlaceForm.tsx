@@ -5,7 +5,7 @@ import { uploadImage } from '../../api/cloudinary'
 import { addNewPlace } from '../../api/firebase'
 import { useNavigate } from 'react-router-dom'
 import ImageCarousel from '../../components/ImageCarousel'
-import Loading from '../../layout/loading'
+import Loading from '../../layout/Loading'
 
 interface Props {
   place: Place

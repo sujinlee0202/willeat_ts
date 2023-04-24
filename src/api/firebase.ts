@@ -64,7 +64,6 @@ const adminUser = async (user: GoogleUser) => {
 // db에 place 추가
 export const addNewPlace = (place: Place, url: string[]) => {
   const id = uuidv4()
-  console.log('url', url)
   return set(ref(database, `place/${id}`), {
     ...place,
     id: id,

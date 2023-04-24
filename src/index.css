@@ -10,3 +10,11 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
+
+body {
+  @apply m-0 w-full h-[100vh]
+}
+
+#root {
+  @apply m-0 w-full h-[100vh] flex items-center justify-center
+}

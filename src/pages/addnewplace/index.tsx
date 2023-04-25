@@ -3,6 +3,7 @@ import { searchNaver } from "../../api/naver-search"
 import { searchMap } from "../../api/naver-map";
 import { Place } from "../../types/Place";
 import AddPlaceForm from "./AddPlaceForm";
+import { convertGeo } from "../../api/tmap";
 
 const AddNewPlace = () => {
   const [selectedId, setSelectedId] = useState(-1)
@@ -26,7 +27,11 @@ const AddNewPlace = () => {
 
   const onClickSelectPlace = (index: number) => {
     setSelectedId(index)
-    searchMap(place[index].mapx, place[index].mapy)
+
+    convertGeo(place[index].mapx, place[index].mapy)
+    .then(res => res.data)
+    .then(item => searchMap(item.coordinate.lat, item.coordinate.lon))
+    
     setSelectedPlace(place[index])
   }
 

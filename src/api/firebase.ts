@@ -73,3 +73,10 @@ export const addNewPlace = (place: Place, url: string[]) => {
     description: place.description,
   })
 }
+
+// db에서 place 가져오기
+export const getPlace = async () => {
+  return get(ref(database, 'place')).then((snapshot) => {
+    return Object.values(snapshot.val())
+  })
+}

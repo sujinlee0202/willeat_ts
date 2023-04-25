@@ -11,17 +11,7 @@ export const initMap = (lat: number, lon: number) => {
 }
 
 export const searchMap = async (x: number, y: number) => {
-  let convertX = 0, convertY = 0
-
-  await convertGeo(x, y)
-  .then(res => Object.values(res.data)[0])
-  .then((coord: any) => {
-    convertX = coord.lat
-    convertY = coord.lon
-    return {convertX, convertY}
-  })
-
-  const center: naver.maps.LatLng = new naver.maps.LatLng(convertX, convertY);
+  const center: naver.maps.LatLng = new naver.maps.LatLng(x, y);
   let mapDiv = new naver.maps.Map('map', {
     center: center,
     zoom: 19,
@@ -31,4 +21,22 @@ export const searchMap = async (x: number, y: number) => {
     position: center,
     map: mapDiv
   })
+}
+
+export const clickPlaceMap = async (x: number, y: number) => {
+  const center: naver.maps.LatLng = new naver.maps.LatLng(x, y);
+
+  let mapDiv = new naver.maps.Map('map', {
+    center: center,
+    zoom: 16,
+  })
+
+  let mapMarker = new naver.maps.Marker({
+    position: center,
+    map: mapDiv
+  })
+
+  // 지도의 중심점을 왼쪽으로 이동시키기
+  const newCenter = new naver.maps.LatLng(x, y - 0.005);
+  mapDiv.setCenter(newCenter);
 }

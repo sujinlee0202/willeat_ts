@@ -11,7 +11,6 @@ const MainPage = () => {
     navigator.geolocation.getCurrentPosition(success)
   }, [])
 
-
   return (
     <div id='map' className='w-full h-[100vh]'></div>
   )

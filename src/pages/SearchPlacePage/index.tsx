@@ -4,7 +4,7 @@ import { useLocation } from 'react-router-dom'
 import { convertGeo } from '../../api/tmap'
 
 const SearchPlacePage = React.memo(() => {
-  const { mapx, mapy } = useLocation().state
+  const { mapx, mapy } = useLocation().state.place
 
   useEffect(() => {
     convertGeo(mapx, mapy)

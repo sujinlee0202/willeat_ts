@@ -156,7 +156,7 @@ const AddPlaceForm = React.memo(({place}: Props) => {
       />
       <div className="w-full h-[360px] relative shrink-0 border border-dashed border-orange-400 flex items-center justify-center">
         {imageUrl 
-          ? <ImageCarousel url={imageUrl} />
+          ? <ImageCarousel url={imageUrl} type='add' />
           : '사진을 등록해 주세요'
         }
       </div>

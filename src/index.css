@@ -2,6 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .scrollbar::-webkit-scrollbar {
+    @apply w-2
+  }
+
+  .scrollbar::-webkit-scrollbar-track {
+    @apply bg-gray-100
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-gray-200 rounded-full
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb:hover {
+    @apply bg-gray-300
+  }
+}
+
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   font-synthesis: none;

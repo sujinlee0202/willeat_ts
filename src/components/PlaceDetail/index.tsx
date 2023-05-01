@@ -7,7 +7,7 @@ const PlaceDetail = () => {
   const { roadAddress, category, description, imageUrl, review, time, title } = location.state.place
 
   return (
-    <div className='absolute top-0 left-96 z-10 w-96 bg-white h-full flex flex-col items-center border-r overflow-y-auto'>
+    <div className='absolute top-0 left-96 z-10 w-96 bg-white h-full flex flex-col items-center border-r overflow-y-auto scrollbar'>
       <div className="w-full h-52 relative">
         {imageUrl && <ImageCarousel url={imageUrl} type='detail' />}
       </div>

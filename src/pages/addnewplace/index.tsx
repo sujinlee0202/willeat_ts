@@ -52,7 +52,7 @@ const AddNewPlace = () => {
   }
   
   return (
-    <section className="flex flex-col lg:flex-row gap-4 h-5/6 lg:h-fit w-5/6 max-w-screen-xl mx-auto overflow-y-auto pr-1 lg:pr-0">
+    <section className="flex flex-col lg:flex-row gap-4 h-5/6 lg:h-fit w-5/6 max-w-screen-xl mx-auto overflow-y-auto scrollbar pr-1 lg:pr-0">
       <div className="flex flex-col w-full gap-4">
         <form className="flex items-center border rounded-xl overflow-hidden shrink-0" onSubmit={handleSubmit}>
           <input 

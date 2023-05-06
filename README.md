@@ -2,6 +2,11 @@
 ## 개요
 운영자가 선택한 맛집 리스트 제공 사이트
 
+## 배포
+```
+https://exquisite-salamander-b5f18d.netlify.app/
+```
+
 ## 기능
 - firebase를 이용한 데이터베이스 저장 및 구글 로그인 기능 구현
 - admin기능 구현 -> admin만 firebase에 데이터 추가 가능

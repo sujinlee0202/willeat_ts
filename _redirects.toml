@@ -1,0 +1,2 @@
+/api/* https://openapi.naver.com/v1/search/local/:splat 200
+/* /index.html 200

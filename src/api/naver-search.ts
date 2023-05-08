@@ -1,7 +1,7 @@
 import axios from "axios"
 
 export const searchNaver = async (query: string) => {
-  return await axios.get('/api/v1/search/local', {
+  return await axios.get('/v1/search/local', {
     params: {
       query: query,
       display: 5,

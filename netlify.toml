@@ -4,6 +4,6 @@
   status = 200
 
 [[redirects]]
-  from = "/v1/*"
+  from = "/v1/search/local/*"
   to = "https://openapi.naver.com/v1/search/local/:splat"
   status = 200
